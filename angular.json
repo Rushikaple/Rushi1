@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "foodieinc-user-app": {
+    "admin-dashboard": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/foodieinc-user-app",
+            "outputPath": "dist/admin-dashboard",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,8 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/ngx-toastr/toastr.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
             "scripts": [
@@ -76,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "foodieinc-user-app:build:production"
+              "browserTarget": "admin-dashboard:build:production"
             },
             "development": {
-              "browserTarget": "foodieinc-user-app:build:development"
+              "browserTarget": "admin-dashboard:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -87,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "foodieinc-user-app:build"
+            "browserTarget": "admin-dashboard:build"
           }
         },
         "test": {
@@ -106,40 +106,9 @@
             ],
             "scripts": []
           }
-        },
-        "cypress-run": {
-          "builder": "@cypress/schematic:cypress",
-          "options": {
-            "devServerTarget": "foodieinc-user-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "foodieinc-user-app:serve:production"
-            }
-          }
-        },
-        "cypress-open": {
-          "builder": "@cypress/schematic:cypress",
-          "options": {
-            "watch": true,
-            "headless": false
-          }
-        },
-        "e2e": {
-          "builder": "@cypress/schematic:cypress",
-          "options": {
-            "devServerTarget": "foodieinc-user-app:serve",
-            "watch": true,
-            "headless": false
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "foodieinc-user-app:serve:production"
-            }
-          }
         }
       }
     }
   },
-  "defaultProject": "foodieinc-user-app"
+  "defaultProject": "admin-dashboard"
 }
